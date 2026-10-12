@@ -884,7 +884,7 @@
   function iniciar() {
     const pagina = document.body.dataset.pagina || '';
     // os títulos das páginas trazem o nome de exemplo; troca pelo nome definido em config.js
-    document.title = document.title.split('Cor & Barro').join(L.nome);
+    document.title = document.title.split('Ruth').join(L.nome);
     $$('[data-nome]').forEach((el) => { el.textContent = L.nome; });
     Carrinho.carregar();
     montarTopo(pagina);
