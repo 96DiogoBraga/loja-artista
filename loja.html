@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obras | Cor &amp; Barro</title>
+<meta name="description" content="Quadros e esculturas originais para comprar online.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="loja">
+
+<main id="conteudo">
+  <div class="container cabeca-pagina">
+    <nav class="migalhas" id="trilha" aria-label="Você está em"></nav>
+    <h1 id="titulo">Todas as obras</h1>
+    <p id="subtitulo"></p>
+  </div>
+  <noscript><p style="padding:32px;text-align:center">Para ver as obras e usar o carrinho, ative o JavaScript do seu navegador.</p></noscript>
+  <div class="container loja">
+    <form id="filtros" class="filtros" aria-label="Filtros" onsubmit="return false"></form>
+    <div class="loja__conteudo">
+      <div class="loja__barra">
+        <div style="display:flex;align-items:center;gap:16px">
+          <button type="button" class="btn btn--vazado loja__filtrar" data-abrir-filtros>Filtrar</button>
+          <span class="loja__n" id="total" aria-live="polite"></span>
+        </div>
+        <label class="ordenar">Ordenar por
+          <select id="ordem">
+            <option value="recentes">Mais recentes</option>
+            <option value="menor">Menor preço</option>
+            <option value="maior">Maior preço</option>
+            <option value="az">Nome, de A a Z</option>
+          </select>
+        </label>
+      </div>
+      <div id="grade" class="grade grade--3"></div>
+    </div>
+  </div>
+  <div class="menu__fundo" data-fundo-filtros hidden></div>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/produtos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

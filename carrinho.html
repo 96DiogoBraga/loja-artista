@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carrinho | Cor &amp; Barro</title>
+<meta name="description" content="Revise as obras escolhidas e envie o pedido pelo WhatsApp.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chewy&family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-pagina="carrinho">
+
+<main id="conteudo">
+  <div class="container cabeca-pagina">
+    <nav class="migalhas" aria-label="Você está em"><ol><li><a href="index.html">Início</a></li><li aria-current="page">Carrinho</li></ol></nav>
+    <h1>Seu carrinho</h1>
+  </div>
+  <noscript><p style="padding:32px;text-align:center">Para ver as obras e usar o carrinho, ative o JavaScript do seu navegador.</p></noscript>
+  <div class="container">
+    <div id="carrinho-vazio" class="vazio" hidden>
+      <h2>Seu carrinho está vazio</h2>
+      <p>Escolha uma obra e ela aparece aqui.</p>
+      <a class="btn" href="loja.html">Ver as obras</a>
+    </div>
+
+    <div id="carrinho-conteudo" class="carrinho" hidden>
+      <div>
+        <div class="carrinho__itens" id="itens"></div>
+        <p style="margin-top:12px"><button type="button" class="item__tirar" id="esvaziar">Esvaziar carrinho</button></p>
+      </div>
+
+      <aside class="carrinho__resumo" aria-label="Resumo do pedido">
+        <h2>Resumo do pedido</h2>
+        <div id="resumo"></div>
+        <p class="nota nota--caixa">Cada peça é única. A reserva só vale depois que a artista confirmar o pedido pelo WhatsApp, junto com o frete e a forma de pagamento.</p>
+
+        <form id="pedido" class="form" novalidate>
+          <div class="campo">
+            <label for="nome">Seu nome</label>
+            <input id="nome" name="nome" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="cep-pedido">CEP para o frete <small>(opcional)</small></label>
+            <input id="cep-pedido" name="cep" inputmode="numeric" autocomplete="postal-code" maxlength="9" placeholder="00000-000">
+          </div>
+          <div class="campo">
+            <fieldset>
+              <legend>Como prefere pagar?</legend>
+              <label class="opcao"><input type="radio" name="pagamento" value="Pix"> Pix</label>
+              <label class="opcao"><input type="radio" name="pagamento" value="Cartão de crédito"> Cartão de crédito</label>
+              <label class="opcao"><input type="radio" name="pagamento" value="Ainda não decidi" checked> Ainda não decidi</label>
+            </fieldset>
+          </div>
+          <div class="campo">
+            <label for="obs">Observações <small>(opcional)</small></label>
+            <textarea id="obs" name="obs" rows="3"></textarea>
+          </div>
+          <p class="erro" id="erro-pedido" role="alert"></p>
+          <button class="btn btn--cheio" type="submit">Enviar pedido pelo WhatsApp</button>
+          <button class="btn btn--vazado btn--cheio" type="button" id="copiar-pedido">Copiar pedido</button>
+          <p id="pedido-enviado" class="ok-msg" tabindex="-1" hidden>O WhatsApp abriu com o seu pedido. É só enviar a mensagem: a artista responde com o frete e a forma de pagar.</p>
+        </form>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/produtos.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
